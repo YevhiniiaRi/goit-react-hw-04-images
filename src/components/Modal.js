@@ -23,8 +23,14 @@ const Modal = ({ image, onClose }) => {
     };
   }, [onClose]);
 
+  const handleOverlayClick = event => {
+    if (event.target.classList.contains('Overlay')) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="Overlay">
+    <div className="Overlay" onClick={handleOverlayClick}>
       <div className="Modal">
         <img src={image.largeImageURL} alt="" />
       </div>
