@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
@@ -73,6 +74,13 @@ const App = () => {
       )}
     </div>
   );
+};
+
+App.propTypes = {
+  images: PropTypes.array,
+  loading: PropTypes.bool,
+  selectedImage: PropTypes.object,
+  query: PropTypes.string,
 };
 
 export default App;
